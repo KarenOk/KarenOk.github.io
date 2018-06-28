@@ -1,0 +1,79 @@
+/* General Styles */
+html{
+    height: 100%;
+    width: 100%;  
+    min-width: 200px;
+}
+body{
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+    color: #193868;
+    font-size: 1.2em;
+    background: linear-gradient(to bottom right, whitesmoke, #00FF35);
+    background-repeat: no-repeat;
+}
+
+.flex-container{
+    display: flex;
+}
+
+
+/* Header */
+.header{
+    background-color: #2856a3;
+    color: whitesmoke;
+    width: 98%;
+    padding: 0.3em;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 1px 4px grey;
+}
+
+
+.header img{
+    margin: 30px;
+    margin-top: 25px;
+    transform: rotate(30deg);
+    height: 3em;
+    width: 3em;
+}
+
+
+/* Content */
+.content{
+    flex-flow: row wrap; 
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.get-inputs{
+    flex-flow: column;
+    margin: 5em auto;
+}
+
+.input{
+    margin: 10px;
+    color: #2856a3;
+}
+
+input[type="submit"]{
+    font-weight: bolder;
+    margin:20px auto;
+    color:red;
+    font-family: 'Indie Flower', cursive;
+    box-shadow: 1px 1px 2px  red;
+}
+
+table,
+td,
+tr{
+    background: white;
+    border: 1px solid grey;
+    border-collapse: collapse;
+}
+
+.row,
+.column{
+    width: 9px;
+    height: 8px;
+}
