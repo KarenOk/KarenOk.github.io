@@ -45,6 +45,10 @@ body{
     align-content: center;
     justify-content: space-evenly;
 }
+.content img{
+    height: 1.2em;
+    width: 1.2em;
+}
 
 .get-inputs{
     flex-flow: column;
@@ -54,6 +58,7 @@ body{
 .input{
     margin: 10px;
     color: #2856a3;
+    font-family: 'Indie Flower', cursive;
 }
 
 input[type="submit"]{
