@@ -10,19 +10,34 @@ $(document).ready(function(){
     console.log(pickedColor);
 
      //Handle color change
-     color.on("change",function(){
+    color.on("change",function(){
         pickedColor=$(this).val();
         console.log(pickedColor);
     });
 
       //Changes color of selected cell
-      $("table").click(function(event){
+    $("table").click(function(event){
         let clickedCell=event.target;
         console.log(clickedCell);
         $(clickedCell).css("background-color",pickedColor);
     });
-        
-    
+
+    // Drag mouse to apply color to multiple cells
+    let mouseDown;
+    $("table").mouseup(function(){
+        mouseDown = false;
+    });
+    $("table").mousedown(function(){
+        mouseDown = true;
+    });
+    $("table").on("mouseover", function(event){
+        if (mouseDown === true){
+            let clickedCell=event.target;
+            console.log(clickedCell);
+            $(clickedCell).css("background-color",pickedColor);
+        }
+    });
+
     //TODO: Function that makes the grid
     function makeGrid(rowNo,columnNo) {
 
