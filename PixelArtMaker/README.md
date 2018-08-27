@@ -16,4 +16,4 @@ All that's required is for you to choose your desired grid size. Select colors a
 
 ## <a name="sample"></a> Project Sample
  Here's a sample of art done with this website 🙂
-![Project Sample](./PixelArtMaker/images/Sample.png)
+![Project Sample](./images/Sample.png)
