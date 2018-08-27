@@ -1,0 +1,148 @@
+/* 
+
+    General Styles 
+    
+*/
+
+body{
+    background-color: white;
+    font-family: 'Harmattan', sans-serif;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+.flex-container{
+    display: flex;
+}
+
+.content-heading{
+    color: rgb(9, 13, 42);
+    font-size: 2em;
+    margin-bottom: 0;
+}
+
+/* 
+
+    Heading 
+    
+*/
+
+.heading{
+    width: 100%;
+    background-image: url(../images/header-image.png);
+    background-repeat: none;
+    background-size: cover;
+    height: 45%;
+    border: 1px solid #ffffff00;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.heading img{
+    height: 120px;
+    width: 110px;
+    margin: 0 1em;
+}
+
+.heading .heading-text{
+    padding: 0 1em;
+}
+
+.heading h1{
+    font-family: 'Atma', cursive;
+    font-size: 5em;
+    font-weight: 700;
+    color: rgb(1, 5, 39);
+    margin-bottom: 0;
+
+}
+.heading p{
+    margin-top: 0;
+    font-size: 2em;
+    font-weight: 400;
+}
+
+/* 
+
+    Navigation
+
+*/
+
+.nav-bar{
+    background-color: rgb(2, 6, 39);
+    position: sticky;
+    top: 0;
+}
+
+.nav-bar-list{
+    max-width: 800px;
+    margin: 0 auto;
+    list-style-type: none;
+    flex-flow: row no-wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-bar-list li{
+    display: inline-block;
+}
+
+.nav-bar-list a{
+    font-size: 1.5em;
+    padding: 5px 30px;
+    text-decoration: none;
+    color:white;
+    word-wrap: normal;
+}
+
+.nav-bar-list a:hover{
+    font-size: 1.7em;
+    text-decoration: underline;
+}
+
+/* 
+
+    Main Content
+
+*/
+
+.content{
+    font-size: 1.3em;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+/* Profile */
+
+.profile-content{
+    /* flex-flow: row wrap; */
+    justify-content: space-evenly;
+    align-items: center;
+    /* max-width: 900px; */
+
+}
+
+.profile-image{
+    width: 40%;
+    margin: 0 auto;
+}
+
+.profile-summary{
+    width: 60%;
+    padding-left: 1em; 
+}
+
+/* Resume */
+
+.resume a{
+    color: rgb(31, 43, 134);
+    text-decoration: none;
+}
+
+.resume a:hover{
+    font-size: 1.1em;
+    text-decoration: underline;
+}
