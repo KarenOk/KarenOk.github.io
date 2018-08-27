@@ -9,6 +9,8 @@
     <title> Karen O. </title>
     <link rel="icon" href="images/icon4.png" />
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Harmattan|Atma" rel="stylesheet">
     <link rel="stylesheet" media="screen" href="css/main.css" />
     <script src="js/main.js"></script>
@@ -26,38 +28,87 @@
     <nav class="nav-bar">
         <ul class="nav-bar-list flex-container">
             <li> <a href="#profile"> Profile </a> </li>
-            <li> <a href="#">  Featured Work </a> </li>
-            <li> <a href="#"> Contact Me </a></li>
+            <li> <a href="#featured-work"> Featured Work </a> </li>
             <li> <a href="https://drive.google.com/file/d/1SXX-Hyi-nj5PcBrt4FrPX98X_EscGHO0/view?usp=sharing"> Résumé </a></li>
+            <li> <a href="#contact-me"> Contact Me </a></li>
         </ul>
     </nav>
 
-    <main class="content"> 
+    <main class="content">
 
-        <article id="profile"> 
-            <h2 class="content-heading"> Profile </h2> <hr>
+        <article id="profile">
+            <h2 class="content-heading"> Profile </h2>
+            <hr>
             <section class="flex-container profile-content">
-                <!-- <img src="images/me1.jpeg" class="profile-image" alt="An image of me">  -->
-                <img src="images/myAvatar (1).svg" class="profile-image" alt="An image of me"> 
-                <p class= "profile-summary"> <strong> Hi there! </strong> <br>
-                    I'm Karen Chioma Okonkwo. I'm currently a fourth year student of the University of Lagos in Nigeria.
-                    By the side, I write computer programs and design websites. I hope to become a household name in my career path someday. 
-                    The Udacity Nanodegree course I'm taking will hopefully bring me closer to this dream. <br>
-                    Please check out my résumé projects I've worked on below. If you want to hit me up instead, check out the Contact Me section.
+                <img src="images/me1.jpeg" class="profile-image" alt="An image of me"> 
+                <!-- <img src="images/myAvatar (1).svg" class="profile-image" alt="An image of me"> -->
+                <p class="profile-summary"> <strong> Hi there! </strong> <br> I'm Karen Chioma Okonkwo. I'm currently a fourth
+                    year student of the University of Lagos in Nigeria. By the side, I write computer programs and design
+                    websites. I hope to become a household name in my career path someday. The Udacity Nanodegree course
+                    I'm taking will hopefully bring me closer to this dream. <br> Please check out my résumé projects I've
+                    worked on below. If you want to hit me up instead, check out the Contact Me section.
                 </p>
             </section>
         </article>
 
-        <article class="resume">
-            <h2 class="content-heading"> Résumé </h2> <hr>
-            <p> Click <a href="https://drive.google.com/file/d/1SXX-Hyi-nj5PcBrt4FrPX98X_EscGHO0/view?usp=sharing" class="resume-link">  here</a> 
+        <article id="featured-work">
+            <h2 class="content-heading"> Featured Work </h2>
+            <hr>
+            <section class="flex-container featured-work">
+                <div class="featured-work-item">
+                    <a href="https://karenok.github.io/pixel-art-maker/">
+                        <img src="images/project.png" alt="Image of a featured work">
+                        <h3> PIXEL ART MAKER </h3>
+                        <p> https://karenok.github.io/pixel-art-maker/</p>
+                    </a>
+                </div>
+
+                <div class="featured-work-item">
+                    <a class="featured-work-item" href="https://karenok.github.io/pixel-art-maker/">
+                        <img src="images/project.png" alt="Image of a featured work">
+                        <h3> PIXEL ART MAKER </h3>
+                        <p> https://karenok.github.io/pixel-art-maker/</p>
+
+                    </a>
+                </div>
+
+                <div class="featured-work-item">
+                    <a class="featured-work-item" href="https://karenok.github.io/pixel-art-maker/">
+                        <img src="images/project.png" alt="Image of a featured work">
+                        <h3> PIXEL ART MAKER </h3>
+                        <p> https://karenok.github.io/pixel-art-maker/</p>
+
+                    </a>
+                </div>
+
+            </section>
+        </article>
+
+        <article class="resume" id="resume">
+            <h2 class="content-heading"> Résumé </h2>
+            <hr>
+            <p> Click <a href="https://drive.google.com/file/d/1SXX-Hyi-nj5PcBrt4FrPX98X_EscGHO0/view?usp=sharing" class="resume-link">
+                    here</a>
                 to view my résumé.
             </p>
         </article>
 
+        <article class="contact-me" id="contact-me">
+            <h2 class="content-heading"> Contact Me</h2>
+            <hr>
+            <ul class="social flex-container">
+                <li> <a href="https://github.com/KarenOk"><i class="fab fa-github"> Github </i> </a></li>
+                <li> <a href="https://twitter.com/Karennnn_O"> <i class="fab fa-twitter"> Twitter </i> </a></li>
+                <li> <a href="https://www.instagram.com/karennnn_o/?hl=en"> <i class="fab fa-instagram"> Instagram </i> </a> </li>
+                <li> <a href="mailto:karenokonkwo29@gmail.com"> <i class="far fa-envelope"> Send an Email </i> </a></li>
+            </ul>
+        </article>
+
     </main>
 
-    <footer> </footer>
+    <footer>
+        <p> © Karen Okonkwo, 2018.</p>
+    </footer>
 
 </body>
 

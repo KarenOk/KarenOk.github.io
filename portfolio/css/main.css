@@ -23,6 +23,12 @@ body{
     margin-bottom: 0;
 }
 
+.fab:hover, .far:hover{
+    font-size: 1.5em;
+    color: rgb(13, 18, 56);
+}
+
+
 /* 
 
     Heading 
@@ -135,6 +141,40 @@ body{
     padding-left: 1em; 
 }
 
+/* Featured Work */
+
+.featured-work{
+    width: 100%;
+    /* max-width: 100%; */
+    /* flex-wrap: wrap; */
+}
+
+.featured-work-item h3{
+    font-size: 1.2em;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+.featured-work-item img{
+    width: 80%;
+    justify-content: space-evenly;
+}
+
+.featured-work-item a{
+    color: rgb(31, 43, 134);
+    font-size: 1emm;
+    text-decoration: none;
+
+    /* overflow: hidden;
+    text-overflow: ellipsis; */
+}
+
+.featured-work-item:hover {
+    opacity: 0.5;
+}
+
+
 /* Resume */
 
 .resume a{
@@ -146,3 +186,34 @@ body{
     font-size: 1.1em;
     text-decoration: underline;
 }
+
+/* Contact Me */
+
+.social {
+    list-style-type: none;
+    justify-content: space-evenly;
+}
+
+.social a{
+    color: black;
+}  
+
+/* 
+
+    Footer
+
+*/
+
+footer{
+    background-color: rgb(2, 6, 39);
+}
+
+footer p{
+    font-size: 1.2em;
+    color: white;
+    vertical-align: middle;
+    text-align: center;
+    min-height: 20px;;
+    height:auto;
+}
+
