@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Udacity</title><script type="text/javascript" async="" src="a_data/analytics.js"></script><script type="text/javascript">!function(){var t=window.analytics=window.analytics||[];if(!t.initialize){if(t.invoked)return void(window.console&&console.error&&console.error("Segment snippet included twice."));t.invoked=!0,t.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"],t.factory=function(e){return function(){var n=Array.prototype.slice.call(arguments);return n.unshift(e),t.push(n),t}};for(var e=0;e<t.methods.length;e++){var n=t.methods[e];t[n]=t.factory(n)}t.load=function(t){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)},t.SNIPPET_VERSION="4.0.0"}}()</script><style>body,body *,html{display:none;height:0;margin:0;padding:0;width:0}</style></head><body><script type="text/javascript">/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+function safeParse(value, fallback = {}) {
+  try {
+    return isPlainObject(value) ? value : JSON.parse(value);
+  } catch (error) {
+    return fallback;
+  }
+}
+
+function isAnalyticsPayload(payload) {
+  var type = payload && payload.type;
+  return type === 'analytics';
+}
+
+function isFunction(obj) {
+  return !!(obj && obj.constructor && obj.call && obj.apply);
+}
+
+function isPlainObject(obj) {
+  if (typeof obj === 'object' && obj !== null) {
+    if (typeof Object.getPrototypeOf === 'function') {
+      var proto = Object.getPrototypeOf(obj);
+      return proto === Object.prototype || proto === null;
+    }
+    return Object.prototype.toString.call(obj) === '[object Object]';
+  }
+  return false;
+}
+
+function isSafeOrigin(origin) {
+  return /^https?:\/\/(.+?\.udacity\.com|localhost\:\d+)/.test(origin);
+}
+
+function handleMessage(event) {
+  var payload = safeParse(event.data);
+  var origin = (event.origin || (event.orginalEvent && event.originalEvent.origin)).toString();
+
+  if (!isSafeOrigin(origin)) {
+    var error = new Error(`Message from origin ${origin} ignored`);
+    console.warn(error.message);
+    return;
+  }
+
+  if (isAnalyticsPayload(payload)) {
+    var method = payload.method;
+    var args   = payload.args || [];
+
+    switch (method) {
+      case 'load':
+        return window.analytics.load(...args);
+      case 'useProxy':
+        // Add function callback that directs segment traffic to segment-proxy
+        window.analytics.ready(function() {
+          window.analytics._integrations['Segment.io'].options.apiHost = 'analyticsevents.udacity.com/v1';
+        });
+        return;
+      case 'identify':
+      case 'page':
+      case 'track':
+        var fn = window.analytics[method];
+        if (isFunction(fn)) {
+          return fn(...args);
+        }
+
+      default:
+        console.warn(`Unsupported method: ${method}`);
+    }
+  } else {
+    return;
+  }
+}
+
+function listen() {
+  window.onmessage = handleMessage;
+}
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  handleMessage,
+  isAnalyticsPayload,
+  isSafeOrigin,
+  listen,
+  safeParse
+});
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__bridge__ = __webpack_require__(0);
+
+
+__WEBPACK_IMPORTED_MODULE_0__bridge__["a" /* default */].listen();
+
+/* harmony default export */ __webpack_exports__["default"] = (__WEBPACK_IMPORTED_MODULE_0__bridge__["a" /* default */]);
+
+
+/***/ })
+/******/ ]);</script></body></html>
