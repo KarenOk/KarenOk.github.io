@@ -1,1 +1,2 @@
-./portfolio/node_modules/*
+.gitignore
+portfolio/node_modules/*
