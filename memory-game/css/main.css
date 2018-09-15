@@ -56,30 +56,45 @@ header {
 */
 
 main {
-    /* width: 90%;
+    width: 90%;
     max-width: 900px;
-    margin: 0 auto; */
+    margin: 0 auto;
+    font-family: 'Sniglet', cursive;
 }
 
 
 /* Toolbar */
+
+.toolbar{
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    color: rgb(46, 41, 41);
+    font-size: 1.3em;
+}
 
 .toolbar .rating{
     list-style: none;
 }
 
 .rating .star {
-    display: inline-block;
+    display: none;
     color: rgb(255, 217, 0);
-    font-size: 1.5em;
+}
+ .rating .show{
+    display: inline-block;
+}
+
+.toolbar .refresh{
+    /* display: inline-block; */
+    /* margin-left: 3px; */
 }
 
 
 /* Game Container */
 
 .game-container {
-    width: 90%;
-    max-width: 800px;
+    width: 95%;
     margin: 0 auto;
     background-color: #fff;
     border-radius: 10px;
@@ -97,7 +112,7 @@ main {
 
 .card {
     color: white;
-    font-size: 3em;
+    font-size: 0;
     width: 20%;
     height: 20%;
     /* padding-top: 20%;
@@ -143,8 +158,8 @@ main {
     height: 100%;
     background-color: rgb(0, 0, 0, 0.5);
     z-index: 10;
-    font-family: 'Sniglet', cursive;
 }
+
 .game-over .body{
     width: 100%;
     max-width: 500px;

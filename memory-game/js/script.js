@@ -1,14 +1,19 @@
 document.addEventListener("DOMContentLoaded", function start() {
 
-    let moves = 0;
+    let moveNo = 0;
     let clickedCardsNo = 0;
     let clickedCards = [];
     let cards = document.getElementsByClassName("card");
     let gameOver = document.getElementsByClassName("game-over");
     let refresh = document.getElementsByClassName("refresh");
+    let moves = document.getElementsByClassName("moves")
     const cardContainer = document.querySelector(".card-list");
     let closeButton =   document.getElementById("close-modal");
-    console.log(cards);
+
+    // moves[0].firstElementChild.innerHTML = moveNo;
+    // console.log(moves);
+    // console.log(moves[1].firstElementChild.innerHTML)
+
 
     function shuffleCards(cards) {
         let currentIndex = cards.length - 1;
@@ -61,16 +66,21 @@ document.addEventListener("DOMContentLoaded", function start() {
     cardContainer.addEventListener("click", function (event) {
         console.log(event);
 
-        if (event.target.classList.contains("open", "match") || event.target.tagName !== "LI") {
+        if (event.target.classList.contains("open") ||
+            event.target.classList.contains("mismatch") ||
+            event.target.classList.contains("match") ||
+            event.target.tagName !== "LI") {
             // Do nothing
             console.log("do nothing");
         } else {
             clickedCardsNo += 1;
-            moves += 1;
+            console.log(clickedCardsNo);
+            moveNo += 1;
             console.log(clickedCardsNo);
 
             if (clickedCardsNo > 0 && clickedCardsNo < 3) {
                 event.target.classList.add("open");
+                moves[0].firstElementChild.innerHTML = moveNo;
 
                 console.log(event.target);
                 console.log(event.target.className);
@@ -91,6 +101,7 @@ document.addEventListener("DOMContentLoaded", function start() {
 
                         if (showModal) {
                             gameOver[0].style.display = "block";
+                            moves[1].innerHTML = `${moveNo} moves.`;
                         }
                     }, 800)
 
@@ -100,8 +111,8 @@ document.addEventListener("DOMContentLoaded", function start() {
                         card.classList.replace("open", "mismatch");
                     })
                     setTimeout(function () {
-                        clickedCards.forEach(function (v, i, array) {
-                            v.classList.remove("mismatch");
+                        clickedCards.forEach(function (card) {
+                            card.classList.remove("mismatch");
                         })
                         clickedCardsNo = 0;
                         clickedCards = [];
