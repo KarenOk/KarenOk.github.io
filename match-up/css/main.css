@@ -48,6 +48,7 @@ header {
 
 .header-title {
     color : #494949;
+    text-align: center;
     font-size: 5em;
 }
 
@@ -59,7 +60,7 @@ main {
     width: 90%;
     max-width: 900px;
     margin: 0 auto;
-    font-family: 'Sniglet', cursive;
+    font-family: 'Sniglet', palatino, cursive;
 }
 
 
@@ -71,6 +72,7 @@ main {
     justify-content: space-evenly;
     color: rgb(46, 41, 41);
     font-size: 1.3em;
+    text-align: center;
 }
 
 .toolbar .rating{
@@ -78,18 +80,31 @@ main {
 }
 
 .rating .star {
-    display: none;
+    visibility: hidden;
+    display: inline;
     color: rgb(255, 217, 0);
 }
  .rating .show{
-    display: inline-block;
-}
-
-.toolbar .refresh{
     /* display: inline-block; */
-    /* margin-left: 3px; */
+    visibility: visible;
 }
 
+.toolbar .restart{
+    cursor: pointer;
+}
+
+.toolbar .timer{
+    color: red;
+}
+
+.toolbar .timer .time{
+    font-size: 1.2em;
+    font-family: arial;
+}
+
+.toolbar .refresh {
+    cursor: default;
+}
 
 /* Game Container */
 
@@ -210,4 +225,33 @@ main {
     background-color: rgb(20, 21, 92);
     border: 1px solid rgb(20, 21, 92);
     border-radius: 3px;
+}
+
+@media screen and (max-width: 600px){
+    .header-title {
+        font-size: 3em;
+    }
+
+    .toolbar{
+        font-size: 1em;
+    }
+    .card.open {
+        font-size: 2em;
+    }
+    
+    .card.match {
+        font-size: 2em;
+    }
+    
+    .card.mismatch{
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 600px){
+
+
+    .toolbar{
+        font-size: 0.8em;
+    }
 }
