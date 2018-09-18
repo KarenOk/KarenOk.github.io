@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function start() {
 
     function startTimer() {
         // To fix the problem of recursive calling of the timer function each time a card is clicked. 
-        // See line 131
+        // See line 138
         if (timerStarted) {
             timerId = setInterval(timer, 1500);
             timerStarted = false;
