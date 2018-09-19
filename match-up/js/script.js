@@ -68,9 +68,13 @@ document.addEventListener("DOMContentLoaded", function start() {
         return cards;
     }
 
-    function closeModal() {
-        gameOver[0].style.display = "none";
-    }
+    shuffleCards(cards),
+        // After shuffle, call function to close cards after a few seconds
+        setTimeout(function () {
+            for (let i = 0; i < cards.length; i++) {
+                cards[i].classList.remove("open", "match");
+            }
+        }, 1500);
 
     function assignStars() {
         let starNo;
@@ -109,25 +113,33 @@ document.addEventListener("DOMContentLoaded", function start() {
         return allMatched;
     }
 
-    shuffleCards(cards),
-        // After shuffle, call function to close cards after a few seconds
-        setTimeout(function () {
-            for (let i = 0; i < cards.length; i++) {
-                cards[i].classList.remove("open", "match");
-            }
-        }, 1500);
+    function countStars() {
+        let starNo = 0;
+        for (let i = 0; i < stars.length; i++) {
+            if (stars[i].classList.contains("show")) {
+                starNo += 1;
+          }
+        }
+
+        document.getElementById("stars").innerHTML = `${starNo} stars`;
+    }
+
+    function closeModal() {
+        gameOver[0].style.display = "none";
+    }
 
     for (let i = 0; i < refresh.length; i++) {
         refresh[i].addEventListener("click", function (event) {
             console.log(event)
-            stopTimer();
-            min = sec = moveNo = 0;
-            for (let i = 0; i < timeEl.length; i++) {
-                timeEl[i].innerText = min.pad(2) + ":" + sec.pad(2);
-            }
-            moves[0].firstElementChild.innerHTML = moveNo;
-            closeModal();
-            start();
+            // stopTimer();
+            // min = sec = moveNo = 0;
+            // for (let i = 0; i < timeEl.length; i++) {
+            //     timeEl[i].innerText = min.pad(2) + ":" + sec.pad(2);
+            // }
+            // moves[0].firstElementChild.innerHTML = moveNo;
+            // closeModal();
+            // start();
+            window.location.reload();
         })
     }
 
@@ -171,8 +183,9 @@ document.addEventListener("DOMContentLoaded", function start() {
 
                         if (showModal) {
                             stopTimer();
+                            countStars();
                             gameOver[0].style.display = "block";
-                            moves[1].innerHTML = `${moveNo} moves.`;
+                            moves[1].innerHTML = `${moveNo} moves`;
                         }
                     }, 800)
 
