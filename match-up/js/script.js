@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function start() {
 
     function shuffleCards(cards) {
         let currentIndex = cards.length - 1;
-        console.log(currentIndex)
+        // console.log(currentIndex)
         let randomIndex, temporaryStore;
 
         while (currentIndex !== 0) {

@@ -23,7 +23,7 @@ Click [here](https://karenok.github.io/match-up/) to begin.
 - JavaScript
 
 ### Complaints
-Notice any bugs or glitches? Do well to send me an [email](mailto:karen.okonkwo@gmail.com). Thank you.
+Notice any bugs or glitches? Do well to send me an [email](mailto:karenokonkwo29@gmail.com). Thank you.
 
 ### Author 
 - Karen Okonkwo (2018)

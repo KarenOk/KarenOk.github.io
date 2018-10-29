@@ -1,0 +1,316 @@
+/*
+     General Styles 
+*/
+
+html {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+body {
+    background-image: url(../images/Dalmatian-Spots.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.flex-container {
+    display:  -webkit-box;
+    display:  -ms-flexbox;
+    display:  flex;
+}
+
+@-webkit-keyframes shake{
+    10% { -webkit-transform: translate3d(1px,0, 1px); transform: translate3d(1px,0, 1px);}
+    20% { -webkit-transform: translate3d(0,2px,0); transform: translate3d(0,2px,0); }
+    30% { -webkit-transform: translate3d(1px,2px,0); transform: translate3d(1px,2px,0);}
+    40% { -webkit-transform: translate3d(0,2px,1px); transform: translate3d(0,2px,1px);}
+    50% { -webkit-transform: translate3d(1px,0,0); transform: translate3d(1px,0,0);}
+    60% { -webkit-transform: translate3d(0,2px,0); transform: translate3d(0,2px,0);}
+    70% { -webkit-transform: translate3d(1px,2px,0); transform: translate3d(1px,2px,0); }
+    80% { -webkit-transform: translate3d(0,2px,1px); transform: translate3d(0,2px,1px);}
+    90% { -webkit-transform: translate3d(1px,0,2px); transform: translate3d(1px,0,2px);}
+    100% { -webkit-transform: translate3d(0,2px,0); transform: translate3d(0,2px,0);}
+}
+
+@keyframes shake{
+    10% { -webkit-transform: translate3d(1px,0, 1px); transform: translate3d(1px,0, 1px);}
+    20% { -webkit-transform: translate3d(0,2px,0); transform: translate3d(0,2px,0); }
+    30% { -webkit-transform: translate3d(1px,2px,0); transform: translate3d(1px,2px,0);}
+    40% { -webkit-transform: translate3d(0,2px,1px); transform: translate3d(0,2px,1px);}
+    50% { -webkit-transform: translate3d(1px,0,0); transform: translate3d(1px,0,0);}
+    60% { -webkit-transform: translate3d(0,2px,0); transform: translate3d(0,2px,0);}
+    70% { -webkit-transform: translate3d(1px,2px,0); transform: translate3d(1px,2px,0); }
+    80% { -webkit-transform: translate3d(0,2px,1px); transform: translate3d(0,2px,1px);}
+    90% { -webkit-transform: translate3d(1px,0,2px); transform: translate3d(1px,0,2px);}
+    100% { -webkit-transform: translate3d(0,2px,0); transform: translate3d(0,2px,0);}
+}
+
+/* 
+    Header
+*/
+
+header {
+    width: 80%;
+    margin: 0 auto;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-family: 'Londrina Outline', cursive;
+}
+
+.header-logo {
+    width: 80px;
+    height: 80px;
+    /* color: rgba(194, 194, 25, 0.932); */
+}
+
+.header-title {
+    color : #494949;
+    text-align: center;
+    font-size: 5em;
+}
+
+/* 
+    Main Section
+*/
+
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: 'Sniglet', palatino, cursive;
+}
+
+
+/* Toolbar */
+
+.toolbar{
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    color: rgb(46, 41, 41);
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.toolbar .rating{
+    list-style: none;
+}
+
+.rating .star {
+    visibility: hidden;
+    display: inline;
+    color: rgb(255, 217, 0);
+}
+ .rating .show{
+    /* display: inline-block; */
+    visibility: visible;
+}
+
+.toolbar .restart{
+    cursor: pointer;
+}
+
+.toolbar .timer{
+    color: red;
+}
+
+.toolbar .timer .time{
+    font-size: 1.2em;
+    font-family: arial;
+}
+
+.toolbar .refresh {
+    cursor: default;
+}
+
+/* Game Container */
+
+.game-container {
+    width: 95%;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    -webkit-box-shadow: 1px 1px 7px #807f7f;
+            box-shadow: 1px 1px 7px #807f7f;
+}
+
+.card-list {
+    list-style: none;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-line-pack: distribute;
+        align-content: space-around;
+    margin: 0 auto;
+    padding: 1% 0;
+}
+
+.card {
+    color: white;
+    font-size: 0;
+    width: 20%;
+    /* height: 20%; */
+    height: 40px;
+    /* padding-top: 20%;
+    position: relative; */
+    margin: 2% 0;
+    border-radius: 10px;
+    background-color: #494949;
+    border: 1px solid grey;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    cursor: crosshair;
+}
+
+.card.open {
+    cursor: default;
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    -webkit-transition: -webkit-transform 0.5s ease-in;
+    transition: -webkit-transform 0.5s ease-in;
+    -o-transition: transform 0.5s ease-in;
+    transition: transform 0.5s ease-in;
+    transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
+    font-size: 3em;
+    background-image: -webkit-gradient(linear, right bottom, left top, from(#3C82C7), to(rgb(120, 241, 245)));
+    background-image: -webkit-linear-gradient(bottom right, #3C82C7, rgb(120, 241, 245));
+    background-image: -o-linear-gradient(bottom right, #3C82C7, rgb(120, 241, 245));
+    background-image: linear-gradient(to top left, #3C82C7, rgb(120, 241, 245));
+}
+
+.card.match {
+    cursor: default;
+    font-size: 3em;
+    /* background-image: linear-gradient(to top left, #3C82C7, rgb(120, 241, 245)); */
+    background-color: rgb(69, 138, 207);
+}
+
+.card.mismatch{
+    background-image: -webkit-gradient(linear, left bottom, right top, from(rgb(211, 11, 11)), to(rgb(226, 100, 15)));
+    background-image: -webkit-linear-gradient(bottom left, rgb(211, 11, 11), rgb(226, 100, 15));
+    background-image: -o-linear-gradient(bottom left, rgb(211, 11, 11), rgb(226, 100, 15));
+    background-image: linear-gradient(to top right, rgb(211, 11, 11), rgb(226, 100, 15));
+    font-size: 3em;
+    -webkit-animation: shake 0.82s;
+            animation: shake 0.82s;
+}
+
+/* Game Over */
+.game-over{
+    display: none;
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.game-over .body{
+    width: 100%;
+    max-width: 500px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: white;
+}
+
+
+.game-over .content{
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 5%
+}
+
+.game-over .close-modal{
+    display: block;
+    padding: 2%;
+    text-align: right;
+    color: red;
+    font-size: 2em;
+}
+
+.game-over h3{
+    color: rgb(13, 13, 117);
+    font-size: 2em;
+}
+.game-over img{
+    width: 50%;
+    margin: 0;
+}
+
+.game-over button{
+    font-family: 'Sniglet', cursive;
+    font-size: 1.2em;
+    background-color: #fff; 
+    color: rgb(20, 21, 92);
+    border: 1px solid rgb(20, 21, 92);
+    border-radius: 3px;
+    padding: 1% 2%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.game-over button:hover{
+    color: #fff; 
+    background-color: rgb(20, 21, 92);
+    border: 1px solid rgb(20, 21, 92);
+    border-radius: 3px;
+}
+
+@media screen and (max-width: 600px){
+    .header-title {
+        font-size: 3em;
+    }
+
+    .toolbar{
+        font-size: 1em;
+    }
+    .card.open {
+        font-size: 2em;
+    }
+    
+    .card.match {
+        font-size: 2em;
+    }
+    
+    .card.mismatch{
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 400px){
+
+
+    .toolbar{
+        font-size: 0.8em;
+    }
+}
