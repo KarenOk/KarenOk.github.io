@@ -1,11 +1,16 @@
 // Enemies our player must avoid
-var Enemy = function() {
+var Enemy = function(x, y) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
+
     this.sprite = 'images/enemy-bug.png';
+    this.x = -100 ;
+    this.y = y ;
+    this.speed = Math.floor(Math.random() * Math.floor(200)) + 30
+    console.log(this.speed)
 };
 
 // Update the enemy's position, required method for game
@@ -14,6 +19,16 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
+
+    this.x = this.x + (this.speed * dt) ;
+    console.log(this.x)
+    
+    // if (this.x > 800) {
+    //     let index = allEnemies.findIndex(x => x == this)
+    //     console.log(index)
+    //     allEnemies.slice(index, 1)
+    // }
+
 };
 
 // Draw the enemy on the screen, required method for game
@@ -44,3 +59,17 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+
+let yCord = [60, 145, 230]
+
+enemy1 = new Enemy(0, yCord[Math.floor(Math.random() * Math.floor(4))]);
+enemy2 = new Enemy(0, yCord[Math.floor(Math.random() * Math.floor(4))]);
+enemy3 = new Enemy(0, yCord[Math.floor(Math.random() * Math.floor(4))]);
+enemy4 = new Enemy(0, yCord[Math.floor(Math.random() * Math.floor(4))]);
+
+// enemy2 = new Enemy(0,100);
+var allEnemies = [enemy1, enemy2, enemy3, enemy4]
+
+// TODO : Generate enemies function
+// TODO : Delete enemies

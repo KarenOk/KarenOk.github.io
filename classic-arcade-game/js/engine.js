@@ -40,6 +40,7 @@ var Engine = (function(global) {
          */
         var now = Date.now(),
             dt = (now - lastTime) / 1000.0;
+            // console.log(dt)
 
         /* Call our update/render functions, pass along the time delta to
          * our update function since it may be used for smooth animation.
@@ -79,6 +80,7 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
+        // console.log(allEnemies)
         // checkCollisions();
     }
 
@@ -93,7 +95,8 @@ var Engine = (function(global) {
         allEnemies.forEach(function(enemy) {
             enemy.update(dt);
         });
-        player.update();
+        
+        // player.update();
     }
 
     /* This function initially draws the "game level", it will then call
@@ -153,7 +156,7 @@ var Engine = (function(global) {
             enemy.render();
         });
 
-        player.render();
+        // player.render();
     }
 
     /* This function does nothing but it could have been a good place to
@@ -183,3 +186,5 @@ var Engine = (function(global) {
      */
     global.ctx = ctx;
 })(this);
+
+console.log(allEnemies)
