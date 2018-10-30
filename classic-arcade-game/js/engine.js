@@ -26,6 +26,7 @@ var Engine = (function(global) {
 
     canvas.width = 505;
     canvas.height = 606;
+
     doc.body.appendChild(canvas);
 
     /* This function serves as the kickoff point for the game loop itself
@@ -81,7 +82,10 @@ var Engine = (function(global) {
     function update(dt) {
         updateEntities(dt);
         // console.log(allEnemies)
-        // checkCollisions();
+        let playerCoords = player.coordinates()
+        allEnemies.forEach(function(enemy){
+            enemy.checkCollision(playerCoords)
+        });
     }
 
     /* This is called by the update function and loops through all of the
@@ -96,7 +100,7 @@ var Engine = (function(global) {
             enemy.update(dt);
         });
         
-        // player.update();
+        player.update();
     }
 
     /* This function initially draws the "game level", it will then call
@@ -138,6 +142,7 @@ var Engine = (function(global) {
                  * we're using them over and over.
                  */
                 ctx.drawImage(Resources.get(rowImages[row]), col * 101, row * 83);
+                
             }
         }
 
@@ -156,7 +161,7 @@ var Engine = (function(global) {
             enemy.render();
         });
 
-        // player.render();
+        player.render();
     }
 
     /* This function does nothing but it could have been a good place to
