@@ -1,0 +1,1 @@
+let highScore = 0;

@@ -133,7 +133,7 @@ function generateEnemies(){
     let yCord = [43, 126, 209] // co-ords of the stone paths.
     enemy = new Enemy(yCord[Math.floor(Math.random() * Math.floor(4))]);
     allEnemies.push(enemy)
-    interval = Math.floor(Math.random() * Math.floor(600)) + 500 
+    interval = Math.floor(Math.random() * Math.floor(600)) + 600 
 }
 
 // Generate enemies at intervals

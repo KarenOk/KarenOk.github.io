@@ -2,6 +2,18 @@ body {
     text-align: center;
 }
 
+header{
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.flex-container{
+    display: flex ;
+    justify-content: space-between; 
+}
+
+
 canvas{
     margin-top: 0em
 }
