@@ -1,5 +1,6 @@
 body {
     text-align: center;
+    font-family: 'Bai Jamjuree', sans-serif;
 }
 
 header{
@@ -10,10 +11,29 @@ header{
 
 .flex-container{
     display: flex ;
-    justify-content: space-between; 
+    justify-content: space-evenly; 
 }
 
+header p{
+    margin: 0
+}
+
+p.top-row{
+    font-size: 1.4em;
+}
+
+p.bottom-row{
+    font-size: 1.6em;
+}
+
+.timer{
+    color: green;
+}
+
+.timer.warning{
+    color: red;
+}
 
 canvas{
-    margin-top: 0em
+    margin-top: -1em
 }

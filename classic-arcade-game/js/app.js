@@ -23,15 +23,16 @@ Enemy.prototype.render = function() {
 };
 
 // Check for collisions
-Enemy.prototype.checkCollision = function(a){
+Enemy.prototype.checkCollision = function(){
+    // Object a: player
+    // Object b: enemy
+    let a = player.getCoordinates()
+    let b = {x: Math.floor(this.x), y: Math.floor(this.y)} ;
 
-    
-    let enemy = {x: Math.floor(this.x), y: Math.floor(this.y)} ;
-
-    if (enemy.x + 101 >= a.x &&
-        enemy.x <= a.x + 101 &&
-        enemy.y + 95 >= a.y + 48 &&
-        enemy.y + 76 <= a.y + 123){
+    if (b.x + 101 >= a.x &&
+        b.x <= a.x + 101 &&
+        b.y + 95 >= a.y + 48 &&
+        b.y + 76 <= a.y + 123){
             setTimeout(function() {
                 player.reset();
             }, 100)       
@@ -51,12 +52,13 @@ class Player{
     }
 
     render(){
-        ctx.drawImage(Resources.get(this.sprite), this.x, this.y)
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+        setScore();
     }
 
-    update(){
-        ctx.drawImage(Resources.get(this.sprite), this.x, this.y)
-
+    update(){   
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+        setScore();
     }
 
     reset(){
@@ -64,7 +66,7 @@ class Player{
         this.y = 375 ;
     }
 
-    coordinates(){
+    getCoordinates(){
         return {x: this.x , y:this.y}
     }
 
@@ -81,6 +83,10 @@ class Player{
                    if (this.y < 0){
                         setTimeout((function(){
                             this.reset();
+                            score += 1;
+                            if(score > highScore){
+                                localStorage.setItem("highscore", score)
+                            }
                         }).bind(this), 100)
                    }
                 }
@@ -124,7 +130,6 @@ document.addEventListener('keyup', function(e) {
 });
 
 
-var highScore = 0;
 var player = new Player()
 var allEnemies = [] ;
 let interval = 800 // initial time interval to generate enemy 
@@ -133,8 +138,8 @@ function generateEnemies(){
     let yCord = [43, 126, 209] // co-ords of the stone paths.
     enemy = new Enemy(yCord[Math.floor(Math.random() * Math.floor(4))]);
     allEnemies.push(enemy)
-    interval = Math.floor(Math.random() * Math.floor(600)) + 600 
+    interval = Math.floor(Math.random() * Math.floor(1000)) + 1000 
 }
 
 // Generate enemies at intervals
-setInterval(generateEnemies, interval)
+setInterval(generateEnemies, 2000)

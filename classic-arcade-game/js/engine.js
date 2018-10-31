@@ -81,10 +81,8 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // console.log(allEnemies)
-        let playerCoords = player.coordinates()
         allEnemies.forEach(function(enemy){
-            enemy.checkCollision(playerCoords)
+            enemy.checkCollision()
         });
     }
 
