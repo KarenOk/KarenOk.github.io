@@ -1,6 +1,6 @@
 let highScore = localStorage.getItem("highscore") || 0;
 let score = 0;
-let time = "01:10"
+let time = "00:10"
 let [min,sec] = time.split(":")
 let scoreElem = document.querySelector(".score");
 let highScoreElem = document.querySelector(".high-score");
@@ -24,9 +24,12 @@ Number.prototype.padNumber = function (size){
     return(paddedNo)
 }
 
+// function to manage timing of the gmae
 function timer(){
     if (parseInt(min) === 0 && parseInt(sec) === 0){
         // end games
+        cancelAnimationFrame(animationReq)
+
     } else if(parseInt(sec) === 0){
         min = (parseInt(min) - 1).padNumber(2);
         sec = "59"
@@ -42,3 +45,5 @@ function timer(){
 }
 
 setInterval(timer, 1000)
+
+console.log(animationReq)

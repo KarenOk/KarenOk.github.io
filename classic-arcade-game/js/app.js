@@ -132,13 +132,13 @@ document.addEventListener('keyup', function(e) {
 
 var player = new Player()
 var allEnemies = [] ;
-let interval = 800 // initial time interval to generate enemy 
+// let interval = 800 // initial time interval to generate enemy 
 
 function generateEnemies(){
     let yCord = [43, 126, 209] // co-ords of the stone paths.
     enemy = new Enemy(yCord[Math.floor(Math.random() * Math.floor(4))]);
     allEnemies.push(enemy)
-    interval = Math.floor(Math.random() * Math.floor(1000)) + 1000 
+    // interval = Math.floor(Math.random() * Math.floor(1000)) + 1000 
 }
 
 // Generate enemies at intervals
