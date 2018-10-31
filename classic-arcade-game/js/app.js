@@ -1,10 +1,5 @@
-/*
- * @constructor: Enemies our player must avoid
- * @params: y: Determines the row the enemy will be on
- * 
- */
-
-var Enemy = function(x, y) {
+// Enemy class to instantiate player object
+var Enemy = function(y) {
     this.sprite = 'images/enemy-bug.png';
     this.x = -100 ;
     this.y = y ;
@@ -14,15 +9,11 @@ var Enemy = function(x, y) {
 // Detemines position of the enemy on update
 Enemy.prototype.update = function(dt) {
     this.x = this.x + (this.speed * dt) ;
-    // this.y = this.y
-    console.log(this.y)
-   
-    // TODO: Remove enemy from array or delete enemy entirely
+
+    // TODO: Remove enemy from array or delete "this" enemy entirely
     if (this.x > 800) {
         let index = allEnemies.findIndex(x => x === this)
-        console.log(index)
-        allEnemies.slice(index, 1)
-        console.log("deleteddd")
+        allEnemies.splice(index, 1)     
     }
 };
 
@@ -33,36 +24,30 @@ Enemy.prototype.render = function() {
 
 // Check for collisions
 Enemy.prototype.checkCollision = function(a){
-    // if ( playerCoords.x === this.x ||  playerCoords.y === this.y ){
-    //     player.reset()
-    // }
-    // console.log(Math.floor(this.x), " ", Math.floor(this.y))
 
-    // if (a.x === Math.floor(this.x)  && 
-    //     a.y === Math.floor(this.y)){
-    //      debugger;
-    //     player.reset()
-    //     console.log("Gjg")
-    // }
-    let b = this;
-    if (a.x <= Math.floor(b.x) + b.width &&
-        a.x + a.width >= Math.floor(b.x) &&
-        a.y <= b.y + b.height &&
-        a.y + a.height >= b.y) {
-            debugger;
-            player.reset()
-            console.log("Fjgg")
+    
+    let enemy = {x: Math.floor(this.x), y: Math.floor(this.y)} ;
+
+    if (enemy.x + 101 >= a.x &&
+        enemy.x <= a.x + 101 &&
+        enemy.y + 95 >= a.y + 48 &&
+        enemy.y + 76 <= a.y + 123){
+            setTimeout(function() {
+                player.reset();
+            }, 100)       
+
         }
+
 }
 
 
-// Player class 
-
+// Player class to instantiate player object
 class Player{
     constructor(){
         this.x = 202 ;
         this.y = 375 ;
         this.sprite = "images/char-princess-girl.png"
+        this.score = 0
     }
 
     render(){
@@ -71,11 +56,12 @@ class Player{
 
     update(){
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y)
+
     }
 
     reset(){
         this.x = 202 ;
-        this.y = 400 ;
+        this.y = 375 ;
     }
 
     coordinates(){
@@ -95,7 +81,6 @@ class Player{
                    if (this.y < 0){
                         setTimeout((function(){
                             this.reset();
-                            console.log(this)
                         }).bind(this), 100)
                    }
                 }
@@ -123,7 +108,6 @@ class Player{
                 }
                 break;
         }
-        console.log(this.x, " ", this.y)
     }
 }
 
@@ -140,20 +124,17 @@ document.addEventListener('keyup', function(e) {
 });
 
 
+var highScore = 0;
 var player = new Player()
 var allEnemies = [] ;
-let interval = Math.floor(Math.random() * Math.floor(1000)) + 400 ; // random time value for set interval function
+let interval = 800 // initial time interval to generate enemy 
 
 function generateEnemies(){
     let yCord = [43, 126, 209] // co-ords of the stone paths.
-    enemy = new Enemy(0, yCord[Math.floor(Math.random() * Math.floor(4))]);
+    enemy = new Enemy(yCord[Math.floor(Math.random() * Math.floor(4))]);
     allEnemies.push(enemy)
+    interval = Math.floor(Math.random() * Math.floor(600)) + 500 
 }
 
 // Generate enemies at intervals
-setInterval(generateEnemies, 3000)
-
-
-// TODO : Delete enemies
-
-console.log("")
+setInterval(generateEnemies, interval)
