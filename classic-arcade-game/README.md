@@ -7,6 +7,7 @@ My rendition of the popular arcade game _Frogger_.
 - Colliding with an enemy bug resets your position.
 
 ### Demo 
+![Game Demo](images/demo.gif)
 
 ### Get Started
 Click [here](https://karenok.github.io/classic-arcade-game) to play.
