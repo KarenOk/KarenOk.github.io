@@ -6,6 +6,7 @@
     <title>Classic Arcade Game</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree" rel="stylesheet">
+    <link rel="icon" href="images/char-princess-girl.png">
 </head>
 
 <body>
@@ -23,6 +24,20 @@
             <p class="bottom-row timer"> 01:10 </p>
         </div>
     </header>
+    <section class="modal hidden flex-container" >
+        <div class="flex-container body">
+            <h2 class="game-over"> Game Over </h2>
+            <span class="replay">
+                <img src="images/replay.svg">
+            </span>
+            <div class="score flex-container">
+                <span class="score-display"> Score: 455 </span>
+                <span class="high-score-img hidden">
+                    <img src="images/highscore.jpg">
+                </span>
+            </div>
+        </div>
+    </section>
     <script src="js/resources.js"></script>
     <script src="js/app.js"></script>
     <script src="js/engine.js"></script>
