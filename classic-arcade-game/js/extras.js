@@ -58,10 +58,6 @@ function countdown(){
     } 
 }
 
-setInterval(countdown, 1000)
-
-
-
 // Handle replay
 replayElem.addEventListener("click", function(){
     window.location.reload()

@@ -69,6 +69,8 @@ var Engine = (function(global) {
         reset();
         lastTime = Date.now();
         main();
+        setInterval(countdown, 1000);
+
     }
 
     /* This function is called by main (our game loop) and itself calls all
