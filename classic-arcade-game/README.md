@@ -1,6 +1,25 @@
-frontend-nanodegree-arcade-game
-===============================
+# Classic Arcade Game
+My rendition of the popular arcade game _Frogger_.
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+### How To Play
+- The aim of this game is to get the player to the water as many times as you can before for the countdown stops, while alse avoiding the enemy bugs.
+- Use the arrrow keys to move the player left, right, up or down.
+- Colliding with an enemy bug resets your position.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+### Demo 
+
+### Get Started
+Click [here](https://karenok.github.io/classic-arcade-game) to play.
+Please note that the game starts immediately it loads.
+
+### Built With
+- HTML
+- CSS
+- JavaScript
+
+### Bugs or Glitches?
+Notice any bugs or glitches? Please contact me [here](mailto:karenokonkwo29@gmail.com). I'm interested in you having the best experience playing this game. 
+
+### Author
+- Karen Okonkwo (2018)
+

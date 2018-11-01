@@ -35,7 +35,7 @@ Enemy.prototype.checkCollision = function(){
         b.y + 76 <= a.y + 123){
             setTimeout(function() {
                 player.reset();
-            }, 100)       
+            }, 110)       
 
         }
 
@@ -75,7 +75,6 @@ class Player{
         switch(key){
             case "up":
                 //  Moves player upwards but not past the water
-                //  Player can reach the water
                 if (this.y-83 >= -40){
                    this.y -= 83;
                    
@@ -142,4 +141,4 @@ function generateEnemies(){
 }
 
 // Generate enemies at intervals
-setInterval(generateEnemies, 2000)
+setInterval(generateEnemies, 1800)

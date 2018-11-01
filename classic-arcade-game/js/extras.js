@@ -30,8 +30,8 @@ Number.prototype.padNumber = function (size){
     return(paddedNo)
 }
 
-// Function to manage timing of the gmae
-function timer(){
+// Function to manage countdown of the gmae
+function countdown(){
     if (parseInt(min) === 0 && parseInt(sec) === 0){
         // End game
         cancelAnimationFrame(animationReq);
@@ -58,7 +58,7 @@ function timer(){
     } 
 }
 
-setInterval(timer, 1000)
+setInterval(countdown, 1000)
 
 
 
