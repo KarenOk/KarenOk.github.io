@@ -2,8 +2,8 @@
 My rendition of the popular arcade game _Frogger_.
 
 ### How To Play
-- The aim of this game is to get the player to the water as many times as you can before for the countdown stops, while alse avoiding the enemy bugs.
-- Use the arrrow keys to move the player left, right, up or down.
+- The aim of this game is to get the player to the water as many times as you can before for the countdown stops, while also avoiding the enemy bugs.
+- Use the arrow keys to move the player left, right, up or down.
 - Colliding with an enemy bug resets your position.
 
 ### Demo 
