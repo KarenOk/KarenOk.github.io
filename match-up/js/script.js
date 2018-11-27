@@ -121,7 +121,8 @@ document.addEventListener("DOMContentLoaded", function start() {
           }
         }
 
-        document.getElementById("stars").innerHTML = `${starNo} stars`;
+        starNo = 1;
+        document.getElementById("stars").innerHTML = (starNo > 1) ? `${starNo} stars` : `${starNo} star` ;
     }
 
     function closeModal() {
