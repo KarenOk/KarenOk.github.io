@@ -9,6 +9,7 @@ body {
     background-image: url(../images/Dalmatian-Spots.svg);
     background-size: cover;
     background-repeat: no-repeat;
+    
 }
 
 .flex-container {
@@ -131,10 +132,7 @@ main {
     color: white;
     font-size: 0;
     width: 20%;
-    height: 20%;
-    /* height: 40px; */
-    /* padding-top: 20%;
-    position: relative; */
+    min-height: 20vh;
     margin: 2% 0;
     border-radius: 10px;
     background-color: #494949;
