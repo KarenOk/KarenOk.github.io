@@ -200,6 +200,10 @@ main {
     font-size: 2em;
 }
 
+.game-over .close-modal i{
+    cursor: pointer;
+}
+
 .game-over h3{
     color: rgb(13, 13, 117);
     font-size: 2em;
