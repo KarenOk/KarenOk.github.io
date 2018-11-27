@@ -112,6 +112,7 @@ header {
     top: 0;
     width: 100%;
     padding: 1% 0;
+    z-index: 5;
 }
 
 .nav-bar-list {
