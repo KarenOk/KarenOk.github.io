@@ -1,2 +1,3 @@
 .gitignore
 portfolio/node_modules/*
+classic-arcade-game/js/ignore.js
