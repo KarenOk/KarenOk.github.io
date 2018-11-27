@@ -19,6 +19,13 @@
         url(../fonts/Londrina_Outline/londrina-outline-regular.woff2) format("woff2");       
 }
 
+@font-face {
+    font-family: "Sniglet Regular";
+    src: url(../fonts/Sniglet/sniglet-regular-webfont.ttf);
+    src: url(../fonts/Sniglet/sniglet-regular-webfont.woff) format("woff"),
+        url(../fonts/Sniglet/sniglet-regular-webfont.woff2) format("woff2")
+}
+
 /*
      General Styles 
 */
@@ -69,7 +76,7 @@ main {
     width: 90%;
     max-width: 900px;
     margin: 0 auto;
-    font-family: 'Sniglet', palatino, cursive;
+    font-family: 'Sniglet Regular', palatino, cursive;
 }
 
 
@@ -174,7 +181,7 @@ main {
 
 /* Game Over */
 .game-over{
-    display: none;
+    /* display: none; */
     position: fixed;
     top:0;
     left: 0;
@@ -222,7 +229,7 @@ main {
 }
 
 .game-over button{
-    font-family: 'Sniglet', cursive;
+    font-family: 'Sniglet Regular', cursive;
     font-size: 1.2em;
     background-color: #fff; 
     color: rgb(20, 21, 92);
