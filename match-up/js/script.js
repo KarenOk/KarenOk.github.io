@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function start() {
 
     function stopTimer() {
         clearInterval(timerId);
-        console.log("Stopped");
+        // console.log("Stopped");
     }
 
 
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function start() {
 
         for (let i = 0; i < stars.length; i++) {
             stars[i].classList.remove("show");
-            console.log(stars[i]);
+            // console.log(stars[i]);
         }
 
         for (let i = 0; i < starNo; i++) {
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function start() {
 
     for (let i = 0; i < refresh.length; i++) {
         refresh[i].addEventListener("click", function (event) {
-            console.log(event)
+            // console.log(event)
             // stopTimer();
             // min = sec = moveNo = 0;
             // for (let i = 0; i < timeEl.length; i++) {
@@ -147,17 +147,17 @@ document.addEventListener("DOMContentLoaded", function start() {
     closeButton.addEventListener("click", closeModal);
 
     cardContainer.addEventListener("click", function (event) {
-        console.log(event);
+        // console.log(event);
         startTimer();
         if (event.target.classList.contains("open") ||
             event.target.classList.contains("mismatch") ||
             event.target.classList.contains("match") ||
             event.target.tagName !== "LI") {
             // Do nothing
-            console.log("do nothing");
+            // console.log("do nothing");
         } else {
             clickedCardsNo += 1;
-            console.log(clickedCardsNo);
+            // console.log(clickedCardsNo);
             moveNo += 1;
             assignStars();
 
@@ -165,10 +165,10 @@ document.addEventListener("DOMContentLoaded", function start() {
                 event.target.classList.add("open");
                 moves[0].firstElementChild.innerHTML = moveNo;
 
-                console.log(event.target);
-                console.log(event.target.className);
+                // console.log(event.target);
+                // console.log(event.target.className);
                 clickedCards.push(event.target);
-                console.log(clickedCards);
+                // console.log(clickedCards);
             }
 
             if (clickedCardsNo === 2) {
