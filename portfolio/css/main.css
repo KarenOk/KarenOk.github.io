@@ -1,3 +1,27 @@
+@font-face {
+    font-family: 'Atma';
+    src: url('../fonts/Atma/');
+    src: url('../fonts/Atma/?#iefix') format('embedded-opentype'),
+        url('../fonts/Atma/Atma-Regular.woff2') format('woff2'),
+        url('../fonts/Atma/Atma-Regular.woff') format('woff'),
+        url('../fonts/Atma/Atma-Regular.ttf') format('truetype'),
+        url('../fonts/Atma/Atma-Regular.svg#Atma-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Harmattan';
+    src: url('../fonts/Harmattan/');
+    src: url('../fonts/Harmattan/?#iefix') format('embedded-opentype'),
+        url('../fonts/Harmattan/Harmattan-Regular.woff2') format('woff2'),
+        url('../fonts/Harmattan/Harmattan-Regular.woff') format('woff'),
+        url('../fonts/Harmattan/Harmattan-Regular.ttf') format('truetype'),
+        url('../fonts/Harmattan/Harmattan-Regular.svg#Harmattan-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* 
 
     General Styles 
