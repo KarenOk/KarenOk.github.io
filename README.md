@@ -5,6 +5,6 @@ In this repository, I put together several repositories for hosting with Github 
   - [Classic Arcade Game](https://karenok.github.io/classic-arcade-game/) - My rendition of the popular arcade game Frogger.
   - [Match up!](https://karenok.github.io/match-up/) - Online game that tests your ability to remember.
 - [Pixel Art Maker](http://karenok.github.io/pixel-art-maker/) - Create beautiful pixel art.
-- [Portfolio](http://karenok.github.io/factorial-calulator/) - A simple factorial calulator.
+- [Factorial Calculator](http://karenok.github.io/factorial-calulator/) - A simple factorial calulator.
 - [Portfolio](http://karenok.github.io/portfolio/) - First attempt at a portfolio site.
 
