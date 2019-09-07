@@ -169,7 +169,7 @@ header {
 
 .profile-image {
     width: 39%;
-    justify-content: center;
+    justify-content: left;
 }
 
 .profile-image img {
