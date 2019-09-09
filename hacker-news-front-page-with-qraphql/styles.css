@@ -1,0 +1,129 @@
+/* General styles */
+body{
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0 auto;
+    width: 85%;
+}
+
+ul.links{
+    list-style-type: none;
+}
+
+ul.links li{
+    display: inline-block;
+}
+
+ul.links a, a{
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+}
+
+/* Sectional Styles */
+
+header{
+    background-color: rgb(255, 102, 0);
+    font-size: 1.1em;
+    margin: 0;
+}
+
+header #logo{
+    width: 18px;
+    margin: 1px 4px;
+    border: 1px solid white;
+    vertical-align: middle;
+}
+
+header #logo, header .text, nav, nav .ul{
+    display: inline-block;
+}
+
+header .text{
+    width: calc(100% - 50px);
+    vertical-align: middle;
+}
+
+header .text .title{
+    font-weight: 800;
+}
+
+header .text .flt-right {
+    float: right;
+    vertical-align: middle;
+    margin: 1px;
+}
+
+header nav, nav .links{
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    background-color: #f0ecec;
+    margin: 0;
+    padding: 10px;
+}
+
+main .story-list {
+    margin: 0;
+    padding-left: 10px; 
+    color: #828282;
+}
+
+.story-list li::before{
+    content: "▲";
+}
+
+main .story{
+    margin: 3px 0 8px;
+}
+
+.story .title {
+    font-size: 1.1em;
+    color: black;
+}
+
+.story .source {
+    font-size: 0.9em;
+    color: #828282;
+}
+
+.story .details {
+    margin: 0;
+    padding: 0;
+    font-size: 0.8em;
+}
+
+
+footer{
+    border-top: 2px solid rgb(255, 102, 0);
+    text-align: center;
+    font-size: 1.1em;
+    margin: 0;
+}
+
+footer .links a{
+    font-size: 0.8em;
+}
+
+
+@media only screen and (max-width: 750px){
+    body{
+        font-size: 13px;
+        width: 100%;
+        padding: 3px;
+    }
+
+    footer input{
+        width: 80%;
+        margin: 5px auto;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    nav a,  header .text .flt-right {
+        font-size: 0.8em;
+    }
+
+}
