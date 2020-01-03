@@ -35,11 +35,15 @@ fetch(URL, options)
     .then(response => {
         console.log(response);
         data = response;
+
+        document.querySelector("img.loading").style.display = "none";
+        document.querySelector(".more-stories").style.display = "block";
+
         for (var i = 0; i < 30; i++) {
             let stories = data.data.hn.topStories;
             let htmlString = `
             <li class="story">
-                <span class="title"> ${stories[i].title} </span> ${ stories[i].url ? `<a class="source" href="${stories[i].url}"> ( ${getDomainName(stories[i].url)})` : ""}
+                <span class="title"> ${stories[i].title} </span> ${stories[i].url ? `<a class="source" href="${stories[i].url}"> ( ${getDomainName(stories[i].url)})` : ""}
                 </a>
                 <p class="details"> ${stories[i].score} points by ${stories[i].by.id} ${timeDiff((Math.round((new Date()).getTime())), 1000 * stories[i].time)} | hide  ${stories[i].kids ? `| ${stories[i].kids.length} comments` : ""}</p>
             </li>

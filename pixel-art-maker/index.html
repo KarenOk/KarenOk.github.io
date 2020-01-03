@@ -1,41 +1,49 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title> Pixel Art Maker </title>
-        <link rel="icon" href="images/image 2.png" type="image/png" >
-        <link rel="stylesheet" href="index.css">
-        <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    </head>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Pixel Art Maker</title>
+		<link rel="icon" href="images/image 2.png" type="image/png" />
+		<link rel="stylesheet" href="index.css" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Indie+Flower"
+			rel="stylesheet"
+		/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	</head>
 
-    <body>
-        <div class="flex-container header">
-            <h1>Pixel Art Maker </h1>
-            <span> <img src="images/image 2.png"  alt="Grid Logo" ></span>
-        </div>
+	<body>
+		<div class="flex-container header">
+			<h1>Pixel Art Maker</h1>
+			<span> <img src="images/image 2.png" alt="Grid Logo"/></span>
+		</div>
 
-        <div class="content flex-container" >
-            <div class="get-inputs ">
-                <form id="grid-specs" >
-                    <h3> Choose your Grid Size <img src="images/grid-lines.png"></h3>
-                    <div class="input"> Grid Height:<input type="number" min="1" max="150" name="Height"> </div>
-                    <div class="input"> Grid Width: <input type="number" min="1" max="150" name="Width"> </div>
-                    <input type="submit" value="Submit 🙂">
-                </form>
-                
-                <div id="color-picker" >
-                 <h3> <img src="images/color-picker.png"> Pick a Color  <input type="color" > </h3> 
-                </div>
+		<div class="content flex-container">
+			<div class="get-inputs ">
+				<form id="grid-specs">
+					<h3>Choose your Grid Size <img src="images/grid-lines.png" /></h3>
+					<div class="input">
+						Grid Height:<input type="number" min="1" max="150" name="Height" />
+					</div>
+					<div class="input">
+						Grid Width: <input type="number" min="1" max="150" name="Width" />
+					</div>
+					<input type="submit" value="Submit 🙂" />
+				</form>
 
-            </div>
+				<div id="color-picker">
+					<h3>
+						<img src="images/color-picker.png" /> Pick a Color
+						<input type="color" />
+					</h3>
+				</div>
+			</div>
 
-            <div class="canvas">
-                <table> </table>
-            </div>    
-        </div>
+			<div class="canvas">
+				<table></table>
+			</div>
+		</div>
 
-        <script src="index.js"></script>
-    </body>
-
+		<script src="index.js"></script>
+	</body>
 </html>

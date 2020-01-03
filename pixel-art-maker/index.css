@@ -1,10 +1,12 @@
 /* General Styles */
-html{
+
+html {
     height: 100%;
-    width: 100%;  
+    width: 100%;
     min-width: 200px;
 }
-body{
+
+body {
     font-family: 'Indie Flower', cursive;
     text-align: center;
     color: #193868;
@@ -13,13 +15,13 @@ body{
     background-repeat: no-repeat;
 }
 
-.flex-container{
+.flex-container {
     display: flex;
 }
 
-
 /* Header */
-.header{
+
+.header {
     background-color: #2856a3;
     color: whitesmoke;
     width: 98%;
@@ -29,8 +31,7 @@ body{
     box-shadow: 2px 1px 4px grey;
 }
 
-
-.header img{
+.header img {
     margin: 30px;
     margin-top: 25px;
     transform: rotate(30deg);
@@ -38,48 +39,46 @@ body{
     width: 3em;
 }
 
-
 /* Content */
-.content{
-    flex-flow: row wrap; 
+
+.content {
+    flex-flow: row wrap;
     align-content: center;
     justify-content: space-evenly;
 }
-.content img{
+
+.content img {
     height: 1.2em;
     width: 1.2em;
 }
 
-.get-inputs{
+.get-inputs {
     flex-flow: column;
     margin: 5em auto;
 }
 
-.input{
+.input {
     margin: 10px;
     color: #2856a3;
     font-family: 'Indie Flower', cursive;
 }
 
-input[type="submit"]{
+input[type="submit"] {
     font-weight: bolder;
-    margin:20px auto;
-    color:red;
+    margin: 20px auto;
+    color: red;
     font-family: 'Indie Flower', cursive;
-    box-shadow: 1px 1px 2px  red;
+    box-shadow: 1px 1px 2px red;
 }
 
-table,
-td,
-tr{
+table, td, tr {
     cursor: url(images/pencil-cursor.png), cell;
     background: white;
     border: 1px solid grey;
     border-collapse: collapse;
 }
 
-.row,
-.column{
+.row, .column {
     width: 9px;
     height: 8px;
 }

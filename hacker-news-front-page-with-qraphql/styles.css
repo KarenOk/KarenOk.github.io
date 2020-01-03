@@ -1,20 +1,21 @@
 /* General styles */
-body{
+
+body {
     font-size: 12px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0 auto;
     width: 85%;
 }
 
-ul.links{
+ul.links {
     list-style-type: none;
 }
 
-ul.links li{
+ul.links li {
     display: inline-block;
 }
 
-ul.links a, a{
+ul.links a, a {
     display: inline-block;
     color: black;
     text-decoration: none;
@@ -22,29 +23,29 @@ ul.links a, a{
 
 /* Sectional Styles */
 
-header{
+header {
     background-color: rgb(255, 102, 0);
     font-size: 1.1em;
     margin: 0;
 }
 
-header #logo{
+header #logo {
     width: 18px;
     margin: 1px 4px;
     border: 1px solid white;
     vertical-align: middle;
 }
 
-header #logo, header .text, nav, nav .ul{
+header #logo, header .text, nav, nav .ul {
     display: inline-block;
 }
 
-header .text{
+header .text {
     width: calc(100% - 50px);
     vertical-align: middle;
 }
 
-header .text .title{
+header .text .title {
     font-weight: 800;
 }
 
@@ -54,7 +55,7 @@ header .text .flt-right {
     margin: 1px;
 }
 
-header nav, nav .links{
+header nav, nav .links {
     margin: 0;
     padding: 0;
 }
@@ -65,17 +66,23 @@ main {
     padding: 10px;
 }
 
+main img.loading {
+    width: 20px;
+    margin: 0 auto;
+    display: block;
+}
+
 main .story-list {
     margin: 0;
-    padding-left: 10px; 
+    padding-left: 10px;
     color: #828282;
 }
 
-.story-list li::before{
+.story-list li::before {
     content: "▲";
 }
 
-main .story{
+main .story {
     margin: 3px 0 8px;
 }
 
@@ -95,35 +102,35 @@ main .story{
     font-size: 0.8em;
 }
 
+main .more-stories {
+    display: none;
+}
 
-footer{
+footer {
     border-top: 2px solid rgb(255, 102, 0);
     text-align: center;
     font-size: 1.1em;
     margin: 0;
 }
 
-footer .links a{
+footer .links a {
     font-size: 0.8em;
 }
 
-
-@media only screen and (max-width: 750px){
-    body{
+@media only screen and (max-width: 750px) {
+    body {
         font-size: 13px;
         width: 100%;
         padding: 3px;
     }
-
-    footer input{
+    footer input {
         width: 80%;
         margin: 5px auto;
     }
 }
 
-@media only screen and (max-width: 500px){
-    nav a,  header .text .flt-right {
+@media only screen and (max-width: 500px) {
+    nav a, header .text .flt-right {
         font-size: 0.8em;
     }
-
 }

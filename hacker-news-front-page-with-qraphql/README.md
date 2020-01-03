@@ -1,8 +1,9 @@
 # Hacker News Front Page using GraphQL
 
-In this project, I make use of GraphQL Hub's Hacker News API.
+In this project, I make use of GraphQL Hub's Hacker News API to recreate the front page of [Hacker News](https://news.ycombinator.com). 
+Click [here](https://karenok.github.io/hacker-news-front-page-with-qraphql/) to view.
 
-## Steps
+## Steps to run locally
 -  Clone this repository
 
 -  Step into this repo's directory
