@@ -9,7 +9,7 @@
   "author": "Karen O.",
   "license": "ISC",
   "devDependencies": {
-    "grunt": "^1.0.3"
+    "grunt": "^1.5.2"
   },
   "dependencies": {
     "grunt-contrib-clean": "^1.1.0",
